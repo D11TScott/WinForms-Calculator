@@ -152,7 +152,11 @@ namespace Calculator_Demo
 
         private void btnPrime_Click(object sender, EventArgs e)
         {
-            m_previousOperation = eOperation.e_Pri;
+            if (m_previousOperation == eOperation.e_None)
+            {
+                PrimeNumberDialogueWindow primeCheck = new PrimeNumberDialogueWindow(Convert.ToDouble(textDisplay.Text));
+                primeCheck.ShowDialog();
+            }
         }
 
         private void btn0_Click(object sender, EventArgs e)
