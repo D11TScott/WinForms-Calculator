@@ -73,6 +73,7 @@ namespace Calculator_Demo
             // textDisplay
             // 
             this.textDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textDisplay.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textDisplay.Location = new System.Drawing.Point(3, 3);
             this.textDisplay.Multiline = true;
             this.textDisplay.Name = "textDisplay";
@@ -121,6 +122,7 @@ namespace Calculator_Demo
             // btnEquals
             // 
             this.btnEquals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEquals.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEquals.Location = new System.Drawing.Point(222, 271);
             this.btnEquals.Name = "btnEquals";
             this.btnEquals.Size = new System.Drawing.Size(69, 61);
@@ -132,6 +134,7 @@ namespace Calculator_Demo
             // btn0
             // 
             this.btn0.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn0.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn0.Location = new System.Drawing.Point(76, 271);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(67, 61);
@@ -143,6 +146,7 @@ namespace Calculator_Demo
             // btnAdd
             // 
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.Location = new System.Drawing.Point(222, 204);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(69, 61);
@@ -154,6 +158,7 @@ namespace Calculator_Demo
             // btn3
             // 
             this.btn3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn3.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn3.Location = new System.Drawing.Point(149, 204);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(67, 61);
@@ -165,6 +170,7 @@ namespace Calculator_Demo
             // btn2
             // 
             this.btn2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn2.Location = new System.Drawing.Point(76, 204);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(67, 61);
@@ -176,6 +182,7 @@ namespace Calculator_Demo
             // btn1
             // 
             this.btn1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn1.Location = new System.Drawing.Point(3, 204);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(67, 61);
@@ -187,6 +194,7 @@ namespace Calculator_Demo
             // btnSub
             // 
             this.btnSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSub.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSub.Location = new System.Drawing.Point(222, 137);
             this.btnSub.Name = "btnSub";
             this.btnSub.Size = new System.Drawing.Size(69, 61);
@@ -198,6 +206,7 @@ namespace Calculator_Demo
             // btn6
             // 
             this.btn6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn6.Location = new System.Drawing.Point(149, 137);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(67, 61);
@@ -209,6 +218,7 @@ namespace Calculator_Demo
             // btn5
             // 
             this.btn5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn5.Location = new System.Drawing.Point(76, 137);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(67, 61);
@@ -220,6 +230,7 @@ namespace Calculator_Demo
             // btn4
             // 
             this.btn4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn4.Location = new System.Drawing.Point(3, 137);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(67, 61);
@@ -231,17 +242,19 @@ namespace Calculator_Demo
             // btnMult
             // 
             this.btnMult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMult.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMult.Location = new System.Drawing.Point(222, 70);
             this.btnMult.Name = "btnMult";
             this.btnMult.Size = new System.Drawing.Size(69, 61);
             this.btnMult.TabIndex = 8;
-            this.btnMult.Text = "*";
+            this.btnMult.Text = "x";
             this.btnMult.UseVisualStyleBackColor = true;
             this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
             // 
             // btn9
             // 
             this.btn9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn9.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn9.Location = new System.Drawing.Point(149, 70);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(67, 61);
@@ -253,6 +266,7 @@ namespace Calculator_Demo
             // btn8
             // 
             this.btn8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn8.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn8.Location = new System.Drawing.Point(76, 70);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(67, 61);
@@ -264,6 +278,7 @@ namespace Calculator_Demo
             // btn7
             // 
             this.btn7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn7.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn7.Location = new System.Drawing.Point(3, 70);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(67, 61);
@@ -275,11 +290,12 @@ namespace Calculator_Demo
             // btnDiv
             // 
             this.btnDiv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDiv.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDiv.Location = new System.Drawing.Point(222, 3);
             this.btnDiv.Name = "btnDiv";
             this.btnDiv.Size = new System.Drawing.Size(69, 61);
             this.btnDiv.TabIndex = 4;
-            this.btnDiv.Text = "/";
+            this.btnDiv.Text = "÷";
             this.btnDiv.UseVisualStyleBackColor = true;
             this.btnDiv.Click += new System.EventHandler(this.btnDiv_Click);
             // 

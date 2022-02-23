@@ -12,9 +12,63 @@ namespace Calculator_Demo
 {
     public partial class Form1 : Form
     {
+        private enum eOperation
+        {
+            e_None,
+            e_Add,
+            e_Sub,
+            e_Div,
+            e_Mul,
+            e_Pri
+        }
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private static eOperation m_previousOperation = eOperation.e_None;
+
+        private void PerformCalculation(eOperation operationToPerfom)
+        {
+            List<double> inputtedNumbers = new List<double>();
+            switch (operationToPerfom)
+            {
+                case eOperation.e_None:
+                    break;
+                case eOperation.e_Add:
+                    inputtedNumbers = textDisplay.Text.Split(" + ").Select(double.Parse).ToList();
+                    textDisplay.Text = (inputtedNumbers[0] + inputtedNumbers[1]).ToString();
+                    break;
+                case eOperation.e_Sub:
+                    inputtedNumbers = textDisplay.Text.Split(" - ").Select(double.Parse).ToList();
+                    textDisplay.Text = (inputtedNumbers[0] - inputtedNumbers[1]).ToString();
+                    break;
+                case eOperation.e_Div:
+                    try
+                    {
+                        inputtedNumbers = textDisplay.Text.Split(" ÷ ").Select(double.Parse).ToList();
+                        if(inputtedNumbers[1] == (double)0)
+                        {
+                            throw new DivideByZeroException(); // because apparently it is infinity otherwise... Weird C#
+                        }
+                        textDisplay.Text = (inputtedNumbers[0] / inputtedNumbers[1]).ToString();
+                    }
+                    catch(DivideByZeroException)
+                    {
+                        textDisplay.Text = "ERROR: CAN'T DIVIDE BY ZERO";
+                    }
+                    break;
+                case eOperation.e_Mul:
+                    inputtedNumbers = textDisplay.Text.Split(" x ").Select(double.Parse).ToList();
+                    textDisplay.Text = (inputtedNumbers[0] * inputtedNumbers[1]).ToString();
+                    break;
+                case eOperation.e_Pri:
+                    break;
+                default:
+                    break;
+            }
+            m_previousOperation = eOperation.e_None;
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
@@ -31,11 +85,13 @@ namespace Calculator_Demo
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            m_previousOperation = eOperation.e_None;
             textDisplay.Clear();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            m_previousOperation = eOperation.e_None;
             if (textDisplay.Text.Length > 0)
             {
                 textDisplay.Text = textDisplay.Text.Remove(textDisplay.Text.Length - 1, 1);
@@ -44,32 +100,59 @@ namespace Calculator_Demo
 
         private void btnDiv_Click(object sender, EventArgs e)
         {
+            if (m_previousOperation != eOperation.e_None)
+            {
+                PerformCalculation(m_previousOperation);
+            }
+
+            m_previousOperation = eOperation.e_Div;
             textDisplay.Text += " ÷ ";
         }
 
         private void btnMult_Click(object sender, EventArgs e)
         {
+            if (m_previousOperation != eOperation.e_None)
+            {
+                PerformCalculation(m_previousOperation);
+            }
+
+            m_previousOperation = eOperation.e_Mul;
             textDisplay.Text += " x ";
         }
 
         private void btnSub_Click(object sender, EventArgs e)
         {
+            if (m_previousOperation != eOperation.e_None)
+            {
+                PerformCalculation(m_previousOperation);
+            }
+
+            m_previousOperation = eOperation.e_Sub;
             textDisplay.Text += " - ";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (m_previousOperation != eOperation.e_None)
+            {
+                PerformCalculation(m_previousOperation);
+            }
+
+            m_previousOperation = eOperation.e_Add;
             textDisplay.Text += " + ";
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            textDisplay.Text += " = ";
+            if(m_previousOperation != eOperation.e_None)
+            {
+                PerformCalculation(m_previousOperation);
+            }
         }
 
         private void btnPrime_Click(object sender, EventArgs e)
         {
-
+            m_previousOperation = eOperation.e_Pri;
         }
 
         private void btn0_Click(object sender, EventArgs e)
